@@ -1,6 +1,6 @@
 pipeline:
   build:
-    image: ruby:2.3.3
+    image: ddmky/ruby-nodejs 
     commands:
       - gem install bundler --no-rdoc --no-ri
       - bundle install
