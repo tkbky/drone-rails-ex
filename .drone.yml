@@ -1,6 +1,6 @@
 pipeline:
   build:
-    image: ddmky/ruby-nodejs 
+    image: ddmky/ruby-nodejs
     commands:
       - gem install bundler --no-rdoc --no-ri
       - bundle install
@@ -10,3 +10,5 @@ pipeline:
 services:
   postgres:
     image: postgres:9.4.5
+    environment:
+      - POSTGRES_USER=postgres
