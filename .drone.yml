@@ -1,0 +1,12 @@
+pipeline:
+  build:
+    image: ruby:2.3.3
+    commands:
+      - gem install bundler --no-rdoc --no-ri
+      - bundle install
+      - export RAILS_ENV=test
+      - bundle exec rake db:create db:test:prepare
+      - bundle exec rspec --format progress
+services:
+  postgres:
+    image: postgres:9.4.5
